@@ -1,7 +1,7 @@
-### Publish Docker Image to GitHub Container Registrygit tag -a v1.2 -m "version 1.2" 
+### Publish Docker Image to GitHub Container Registry
 
 ```
-git tag -a v1.2 -m "version 1.2" 
+git tag v1.0.1  
 ```
 
 ```
