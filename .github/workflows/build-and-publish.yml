@@ -3,6 +3,8 @@ name: Docker Image CI
 on:
   push:
     branches: [ master ]
+    tags:
+      - 'v*'
   pull_request:
     branches: [ master ]
 
@@ -24,8 +26,8 @@ jobs:
     
     - name: Build image and push to GitHub Container Registry
       run: |
-        docker build . --tag ghcr.io/${{ github.repository_owner }}/nodejs-github:v${GITHUB_REF##*/}
-        docker push ghcr.io/${{ github.repository_owner }}/nodejs-github:v${GITHUB_REF##*/}
+        docker build . --tag ghcr.io/${{ github.repository_owner }}/nodejs-github:v${github.ref}
+        docker push ghcr.io/${{ github.repository_owner }}/nodejs-github:v${github.ref}
 
     - name: Image digest
       run: echo ${{ steps.docker_build.outputs.digest }}
