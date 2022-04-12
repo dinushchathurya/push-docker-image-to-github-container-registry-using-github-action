@@ -25,9 +25,10 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.GHCR_PAT }}
 
-    - name: Build image and push to Docker Hub
+    - name: Build image and push to GitHub COntainer Registry
       uses: docker/build-push-action@v2
       with:
+        driver-opts: image=moby/buildkit:master
         tags: gcr.io/${{ github.actor }}/nodejs-docker:latest
         push: true
         
