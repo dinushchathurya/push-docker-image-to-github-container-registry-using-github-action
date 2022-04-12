@@ -28,12 +28,9 @@ jobs:
         password: ${{ secrets.GHCR_PAT }}
 
     - name: Build image and push to GitHub COntainer Registry
-      uses: docker/build-push-action@v2
-      with:
-        context: .
-        push: true
-        file: Dockerfile
-        tags: gcr.io/${{ github.repository_owner  }}/nodejs-docker:latest
+        run: |
+          docker build . --tag ghcr.io/${{ github.repository_owner }}/nodejs-gihub-registry:latest
+          docker push ghcr.io/${{ github.repository_owner }}/nodejs-gihub-registry:latest
         
     - name: Image digest
       run: echo ${{ steps.docker_build.outputs.digest }}
