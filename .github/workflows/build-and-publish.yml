@@ -25,15 +25,22 @@ jobs:
         username: ${{ github.repository_owner }}
         password: ${{ secrets.GHCR_PAT }}
     
+    - name: Get Tag Name
+      id: tag_name
+      run: |
+        echo ::set-output name=SOURCE_TAG::${GITHUB_REF#refs/tags/}
+    
     - name: Push to GitHub Packages
       uses: docker/build-push-action@v2
       with:
         context: .
         tags: |
-          ghcr.io/${{ github.repository_owner }}/nodejs-github:${{ github.sha }}
+          ghcr.io/${{ github.repository_owner }}/nodejs-github:$VERSION
         push: true
+      env:
+        VERSION: ${{ steps.tag_name.outputs.SOURCE_TAG }}
     
-    
+
     # - name: Get Tag Name
     #   id: tag_name
     #   run: |
