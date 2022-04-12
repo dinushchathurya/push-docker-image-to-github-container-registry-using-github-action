@@ -1,1 +1,1 @@
-### Push images GitHub Package Registry using GitHub Actions
+### Publish Docker Image to GitHub Container Registry
