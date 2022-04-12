@@ -37,7 +37,6 @@ jobs:
       env:
         VERSION: ${{ steps.tag_name.outputs.SOURCE_TAG }}
 
-
     - name: Image digest
       run: echo ${{ steps.docker_build.outputs.digest }}
 
