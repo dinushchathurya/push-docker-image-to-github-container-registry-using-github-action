@@ -35,12 +35,9 @@ jobs:
       with:
         context: .
         tags: |
-          ghcr.io/${{ github.repository_owner }}/nodejs-github:$VERSION
+          ghcr.io/${{ github.repository_owner }}/nodejs-github:${{ steps.tag_name.outputs.SOURCE_TAG }}
         push: true
-      env:
-        VERSION: ${{ steps.tag_name.outputs.SOURCE_TAG }}
     
-
     # - name: Get Tag Name
     #   id: tag_name
     #   run: |
