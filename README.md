@@ -12,3 +12,7 @@ git describe --tags
 git push origin tag v1.2 
 ```
 
+```
+git push -u origin v1.2.1
+```
+
