@@ -29,9 +29,8 @@ jobs:
       id: tag
       uses: dawidd6/action-get-tag@v1
       with:
-        # Optionally strip `v` prefix
         strip_v: true
-        
+
     - name: Build image and push to GitHub Container Registry
       run: |
         docker build . --tag ghcr.io/${{ github.repository_owner }}/nodejs-github:${{steps.tag.outputs.tag}}
