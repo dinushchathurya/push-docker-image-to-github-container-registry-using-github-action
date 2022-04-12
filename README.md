@@ -1,1 +1,1 @@
-###  Push images GitHub Package Registry using GitHub Actions
+### Push images GitHub Package Registry using GitHub Actions
