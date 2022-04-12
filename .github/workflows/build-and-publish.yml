@@ -22,14 +22,15 @@ jobs:
       uses: docker/login-action@v1
       with:
         registry: ghcr.io
-        username: ${{ github.actor }}
+        username: ${{ github.repository_owner  }}
         password: ${{ secrets.GHCR_PAT }}
 
     - name: Build image and push to GitHub COntainer Registry
       uses: docker/build-push-action@v2
       with:
-        tags: gcr.io/${{ github.actor }}/nodejs-docker:latest
+        context: .
         push: true
+        tags: gcr.io/${{ github.repository_owner  }}/nodejs-docker:latest
         
     - name: Image digest
       run: echo ${{ steps.docker_build.outputs.digest }}
