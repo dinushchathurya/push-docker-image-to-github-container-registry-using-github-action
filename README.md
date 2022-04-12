@@ -13,6 +13,10 @@ git push origin tag v1.2
 ```
 
 ```
-git push -u origin v1.2.1
+git tag -f <old tag name>
+```
+
+```
+git push -f --tags
 ```
 
