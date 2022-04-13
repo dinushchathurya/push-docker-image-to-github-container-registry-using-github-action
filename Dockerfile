@@ -15,4 +15,3 @@ EXPOSE 3000
 
 CMD [ "node", "server.js" ]
 
-LABEL org.opencontainers.image.source https://github.com/OWNER/REPO
