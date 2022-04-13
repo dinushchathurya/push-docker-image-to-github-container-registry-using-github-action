@@ -4,10 +4,13 @@ on:
   push:
     branches: [ master ]
     tags:
-      - '*'
+      - 'v*.*.*'
 
   pull_request:
     branches: [ master ]
+
+env: 
+  ProjectName: nodejs-github
 
 jobs:
 
@@ -16,7 +19,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+
+    - name: Set Environment Variable
+      run: echo "RELEASE_VERSION=${GITHUB_REF:11}" >> $GITHUB_ENV
+
+    - name: Test Environment Variable
+      run: echo ${{ env.RELEASE_VERSION }}
+    
+    - name: Checkout of GitHub Repo
+      uses: actions/checkout@v3
           
     - name: Login to Github Packages
       uses: docker/login-action@v1
@@ -35,7 +46,7 @@ jobs:
       with:
         context: .
         tags: |
-          ghcr.io/${{ github.repository_owner }}/nodejs-github:${{ steps.tag_name.outputs.SOURCE_TAG }}
+          ghcr.io/${{ github.repository_owner }}/${{ env.ProjectName }}:${{ steps.tag_name.outputs.SOURCE_TAG }}
         push: true
     
     # - name: Get Tag Name
