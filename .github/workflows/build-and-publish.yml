@@ -46,7 +46,7 @@ jobs:
       with:
         context: .
         tags: |
-          ghcr.io/${{ github.repository_owner }}/${{ env.ProjectName }}:${{ steps.tag_name.outputs.SOURCE_TAG }}
+          ghcr.io/${{ github.repository_owner }}/nodejs-github:${{ steps.tag_name.outputs.SOURCE_TAG }}
         push: true
     
     # - name: Get Tag Name
