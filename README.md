@@ -6,7 +6,7 @@
 
 #### Create Environment Variables
 
-1.Create <a href="https://docs.github.com/en/packages/guides/enabling-improved-container-support">GitHub Personal Access Token</a> in your <a href="https://github.com/settings/tokens">profile developer settings</a> page. Select following scopes:<br><br>
+1.Create <a href="https://docs.github.com/en/packages/guides/enabling-improved-container-support">GitHub Personal Access Token</a> in your <a href="https://github.com/settings/tokens">profile developer settings</a> page. Select following scopes:<br>
 
 <li>repo</li>
 <li>read:packages</li>
