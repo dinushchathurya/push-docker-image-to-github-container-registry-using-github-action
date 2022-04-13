@@ -4,7 +4,7 @@
 ##### In here, the following workflow can use to publish the docker image to GitHub Container Registry (GCR) using GitHub Action. This GitHub action will be triggered every time a new Git tag is pushed to the GitHub repository.
 
 
-###### Create Environment Variables
+#### Create Environment Variables
 
 1.Create <a href="https://docs.github.com/en/packages/guides/enabling-improved-container-support">GitHub Personal Access Token</a> in your <a href="https://github.com/settings/tokens">profile developer settings</a> page. Select following scopes:<br><br>
 
@@ -14,7 +14,7 @@
 
 2.Go to your GitHub repositorie's <a href="https://github.com/{your_username}/{your_repository_name}/settings/secrets/actions">Settings => Secrets => Actins</a> and create New Repsitory Secret. Name it <b>GHCR_PAT</b> and set the value to your created <b>YOUR ACCESS TOKEN</b>.
 
-###### Publish new Docker Image with version number
+#### Publish new Docker Image with version number
 
 As usual, stage your changes and then commit them. Then, run the folowing commands:
 
