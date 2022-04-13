@@ -69,6 +69,9 @@ on:
   push:
     tags:
       - "v*.*.*"
+env:
+  IMAGE_NAME: nodejs-github
+
 jobs:
   push_to_registry:
     name: Build and push Docker image to Docker Hub
@@ -95,6 +98,6 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/${{ github.repository_owner }}/${{ github.repository }}:${{ env.RELEASE_VERSION }}
+          tags: ghcr.io/${{ github.repository_owner }}/$IMAGE_NAME:${{ env.RELEASE_VERSION }}
 
 
