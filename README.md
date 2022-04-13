@@ -10,7 +10,7 @@
 
 <li>repo</li>
 <li>read:packages</li>
-<li>write:packages</li>
+<li>write:packages</li><br>
 
 2.Go to your GitHub repositorie's <a href="https://github.com/{your_username}/{your_repository_name}/settings/secrets/actions">Settings => Secrets => Actins</a> and create New Repsitory Secret. Name it <b>GHCR_PAT</b> and set the value to your created <b>YOUR ACCESS TOKEN</b>.
 
